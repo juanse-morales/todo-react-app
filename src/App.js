@@ -1,15 +1,15 @@
 
 import './App.css';
-import Header from './components/Header';
 import ToDoForm from './components/ToDoForm';
+import ToDoItems from './components/ToDoItems';
 
 function App() {
   return (
-    <div>
+    <div className='main-container'>
       <div className="header">
-        <Header />
+        <h1 className='header-title'>ToDo App</h1>
       </div>
-      <div className='container-main'>
+      <div className='todo-main-container'>
         <div className='todo-title'>
           <h3>Mis tareas</h3>
         </div>

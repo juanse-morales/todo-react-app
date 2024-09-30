@@ -7,11 +7,21 @@ html, body {
   background-color: #1b1b32;
 }
 
+.main-container {
+  display: flex;
+}
+
 .header {
   width: 260px;
   margin: 100px auto 50px auto;
 }
 
-.container-main {
+.header-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40pt;
+  color: white;
+}
+
+.todo-main-container {
   display: flex;
 }
