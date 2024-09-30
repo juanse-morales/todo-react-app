@@ -32,6 +32,7 @@ html, body {
 
 .todo-main-container {
   display: flex;
+  flex-direction: column;
   width: 600px;
   min-height: 500px;
   background-color: #d0d0d5;
@@ -39,6 +40,14 @@ html, body {
   border-radius: 26px;
 }
 
+.todo-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .todo-title {
-  color: white;
+  color: #1b1b32;
+  font-size: 25px;
+  margin: 20px 0;
 }
