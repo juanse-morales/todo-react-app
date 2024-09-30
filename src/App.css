@@ -11,3 +11,7 @@ html, body {
   width: 260px;
   margin: 100px auto 50px auto;
 }
+
+.container-main {
+  display: flex;
+}
