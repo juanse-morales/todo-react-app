@@ -11,7 +11,7 @@ html, body {
   display: flex;
 }
 
-.header {
+.header-container {
   width: 260px;
   margin: 100px auto 50px auto;
 }
@@ -24,4 +24,8 @@ html, body {
 
 .todo-main-container {
   display: flex;
+}
+
+.todo-title {
+  color: white;
 }
