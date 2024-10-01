@@ -1,8 +1,22 @@
+import { useState } from "react";
 import "./App.css";
 import ToDoForm from "./components/ToDoForm";
 import ToDoItems from "./components/ToDoItems";
 
 function App() {
+  
+  const [items, setItems] = useState([]);
+  
+  const addItem = (item) => {
+    const taskName = item.name.trim();
+    if (taskName) {
+      item.name = taskName;
+      const updatedItems = [item, ...items];
+      setItems(updatedItems);
+    }
+    
+  };
+  
   return (
     <div className="main-container">
       <div className="header-container">
@@ -13,7 +27,7 @@ function App() {
           <h3 className="todo-title">Lista de tareas</h3>
         </div>
 
-        <ToDoForm />
+        <ToDoForm onSubmit={addItem} />
 
         <ToDoItems />
       </div>
