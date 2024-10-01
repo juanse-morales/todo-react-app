@@ -1,20 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ToDoItems.css";
 import ToDoTask from "./ToDoTask";
-import ToDoForm from "./ToDoForm";
 
-const ToDoItems = () => {
-  const [items, setItems] = useState([]);
-  
-  const addItem = (item) => {
-    const taskName = item.name.trim();
-    if (taskName) {
-      item.name = taskName;
-      const updatedItems = [item, ...items];
-      setItems(updatedItems);
-    }
-    
-  };
+const ToDoItems = ({initialItems, onChangeItems}) => {
+  const [items, setItems] = useState(initialItems);
+
+  // Update state when props change
+  useEffect(() => {
+    setItems(initialItems);
+  }, [initialItems]); // Dependency on prop
 
   const completeTask = (id) => {
     if (id) {
@@ -25,6 +19,7 @@ const ToDoItems = () => {
         return item;
       });
       setItems(updatedItems);
+      onChangeItems(updatedItems);
     }
   };
 
@@ -32,12 +27,13 @@ const ToDoItems = () => {
     if (id) {
       const updatedItems = items.filter((item) => item.id !== id);
       setItems(updatedItems);
+      onChangeItems(updatedItems);
     }
   };
 
   return (
     <>
-      <ToDoForm onSubmit={addItem} />
+      
       <div className="todo-items-container">
         {items.map((item) => (
           <ToDoTask
