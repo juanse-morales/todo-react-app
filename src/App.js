@@ -1,21 +1,7 @@
-import { useState } from "react";
 import "./App.css";
-import ToDoForm from "./components/ToDoForm";
 import ToDoItems from "./components/ToDoItems";
 
 function App() {
-  
-  const [items, setItems] = useState([]);
-  
-  const addItem = (item) => {
-    const taskName = item.name.trim();
-    if (taskName) {
-      item.name = taskName;
-      const updatedItems = [item, ...items];
-      setItems(updatedItems);
-    }
-    
-  };
   
   return (
     <div className="main-container">
@@ -27,9 +13,7 @@ function App() {
           <h3 className="todo-title">Lista de tareas</h3>
         </div>
 
-        <ToDoForm onSubmit={addItem} />
-
-        <ToDoItems items={items} />
+        <ToDoItems />
       </div>
     </div>
   );
