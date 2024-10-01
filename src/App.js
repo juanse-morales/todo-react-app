@@ -29,7 +29,7 @@ function App() {
 
         <ToDoForm onSubmit={addItem} />
 
-        <ToDoItems />
+        <ToDoItems items={items} />
       </div>
     </div>
   );
